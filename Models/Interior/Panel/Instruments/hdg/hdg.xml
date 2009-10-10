@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>hdg.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>knob</object-name>
+    <object-name>face</object-name>
+    <object-name>scale</object-name>
+    <object-name>aircraft</object-name>
+    <object-name>clickR</object-name>
+    <object-name>clickL</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>scale</object-name>
+    <object-name>aircraft</object-name>
+    <emission>
+      <red>   0.030 </red>
+      <green> 0.015 </green>
+      <blue>  0.005 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>texrotate</type>
+    <object-name>face</object-name>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+    <axis>
+      <x>  0.0 </x>
+      <y>  0.0 </y>
+      <z> -1.0 </z>
+    </axis>
+    <center>
+      <x> 0.5 </x>
+      <y> 0.5 </y>
+    </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>clickL</object-name>
+      <visible>false</visible>
+      <action>
+        <name>small decrease</name>
+        <button>0</button>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/heading-indicator/offset-deg</property>
+          <step>-1</step>
+          <min>0</min>
+          <max>360</max>
+          <wrap>1</wrap>
+        </binding>
+      </action>
+      <action>
+        <name>large decrease</name>
+        <button>1</button>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/heading-indicator/offset-deg</property>
+          <step>-5</step>
+          <min>0</min>
+          <max>360</max>
+          <wrap>1</wrap>
+        </binding>
+      </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>clickR</object-name>
+    <visible>false</visible>
+    <action>
+      <name>small increase</name>
+      <button>0</button>
+      <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/heading-indicator/offset-deg</property>
+          <step>1</step>
+          <min>0</min>
+          <max>360</max>
+          <wrap>1</wrap>
+      </binding>
+    </action>
+    <action>
+      <name>large increase</name>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/heading-indicator/offset-deg</property>
+        <step>5</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

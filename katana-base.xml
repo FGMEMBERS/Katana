@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Katana/katana-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Katana/Sounds/katana-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Katana/Models/katana.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <flaps>
+      <setting> 0.000 </setting>
+      <setting> 0.375 </setting>
+      <setting> 1.000 </setting> <!-- 20 deg -->
+    </flaps>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int" n="0">0</int>
+        <int type="int" n="1">0</int>
+        <int type="int" n="2">0</int>
+        <int type="int" n="3">0</int>
+        <int type="int" n="4">0</int>
+        <int type="int" n="5">0</int>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>katana</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/katana-menu.xml"/>
+
+  </sim>
+ 
+  <controls>
+    <gear>
+      <brake-parking type="double">1</brake-parking>
+    </gear>
+  </controls>
+
+  <input>
+    <keyboard include="Nasal/katana-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <katana>
+      <file>Aircraft/Katana/Nasal/doors.nas</file>
+      <file>Aircraft/Katana/Nasal/light.nas</file>
+      <file>Aircraft/Katana/Nasal/liveries.nas</file>
+      <file>Aircraft/Katana/Nasal/immat.nas</file>
+      <file>Aircraft/Katana/Models/Interior/Panel/Instruments/gps/kln90b.nas</file>
+    </katana>
+  </nasal>
+   
+</PropertyList>
