@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/Katana/Models/Liveries", 10);
+      
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -26,41 +40,26 @@
     <object-name>direction</object-name>
     <object-name>axeA</object-name>
     <object-name>axeAB</object-name>
-    <object-name>roueA</object-name>
     <object-name>cacheA</object-name>
-    <object-name>intcacheA</object-name>
     <object-name>axeG</object-name>
-    <object-name>roueG</object-name>
     <object-name>cacheG</object-name>
-    <object-name>intcacheG</object-name>
     <object-name>axeD</object-name>
-    <object-name>roueD</object-name>
     <object-name>cacheD</object-name>
-    <object-name>intcacheD</object-name>
     <object-name>bol</object-name>
-    <object-name>helice</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourlampe</object-name>
     <object-name>tail</object-name>
+    
+    <object-name>intcacheA</object-name>
+    <object-name>roueA</object-name>
+    <object-name>intcacheG</object-name>
+    <object-name>roueG</object-name>
+    <object-name>intcacheD</object-name>
+    <object-name>roueD</object-name>
+    <object-name>helice</object-name>
     <object-name>trous</object-name>
-
+    
     <!-- Objets transparents -->
-    <object-name>vitres</object-name>
-    <object-name>vitrelampe</object-name>
-    <object-name>propdisc</object-name>
-    <object-name>propblur</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>glass_shader.png</texture>
-    <object-name>vitres</object-name>
-    <object-name>vitrelampe</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
     <object-name>vitres</object-name>
     <object-name>vitrelampe</object-name>
     <object-name>propdisc</object-name>
@@ -80,81 +79,188 @@
     <object-name>direction</object-name>
     <object-name>axeA</object-name>
     <object-name>axeAB</object-name>
-    <object-name>roueA</object-name>
     <object-name>cacheA</object-name>
-    <object-name>intcacheA</object-name>
     <object-name>axeG</object-name>
-    <object-name>roueG</object-name>
     <object-name>cacheG</object-name>
-    <object-name>intcacheG</object-name>
     <object-name>axeD</object-name>
-    <object-name>roueD</object-name>
     <object-name>cacheD</object-name>
-    <object-name>intcacheD</object-name>
     <object-name>bol</object-name>
-    <object-name>helice</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourlampe</object-name>
     <object-name>tail</object-name>
+    
+    <object-name>intcacheA</object-name>
+    <object-name>roueA</object-name>
+    <object-name>intcacheG</object-name>
+    <object-name>roueG</object-name>
+    <object-name>intcacheD</object-name>
+    <object-name>roueD</object-name>
+    <object-name>helice</object-name>
     <object-name>trous</object-name>
-
+    
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>derive</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>axeA</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>cacheA</object-name>
+    <object-name>axeG</object-name>
+    <object-name>cacheG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>cacheD</object-name>
+    <object-name>bol</object-name>
+    <object-name>tourvitres</object-name>
+    <object-name>tourlampe</object-name>
+    <object-name>tail</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>derive</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>axeA</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>cacheA</object-name>
+    <object-name>axeG</object-name>
+    <object-name>cacheG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>cacheD</object-name>
+    <object-name>bol</object-name>
+    <object-name>tourvitres</object-name>
+    <object-name>tourlampe</object-name>
+    <object-name>tail</object-name>
+  </effect>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitres</object-name>
+    <object-name>vitrelampe</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitres</object-name>
+    <object-name>vitrelampe</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>vitrelampe</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </effect>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <path>Aircraft/Katana/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.00 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m> -0.92 </z-m>
+    </offsets>
+  </model>
+   
   <!-- Immatriculatoin -->
   <model>
     <path>Aircraft/Katana/Models/Immat/immat.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
   </model>
 
   <!-- Intérieur -->
   <model>
+    <name>Interieur</name>
     <path>Aircraft/Katana/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
+
+  <!-- Cranking effects -->
+  <model>
+    <path>Aircraft/Katana/Models/Effects/cranking/cranking.xml</path>
     <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
+      <x-m> -2.479 </x-m>
+      <y-m>  0.101 </y-m>
+      <z-m> -0.525 </z-m>
+      <pitch-deg>  45 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Effets sur le sol -->
+  <!-- Roue avant -->
+  <model>
+    <path>Aircraft/Katana/Models/Effects/ground/ground0.xml</path>   
+    <offsets>
+      <x-m> -2.919 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.109 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/Katana/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -1.222 </x-m>
+      <y-m> -0.962 </y-m>
+      <z-m> -1.109 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/Katana/Models/Effects/ground/ground2.xml</path>
+    <offsets>
+      <x-m> -1.222 </x-m>
+      <y-m>  0.962 </y-m>
+      <z-m> -1.109 </z-m>
     </offsets>
   </model>
 
@@ -173,7 +279,7 @@
     <object-name>propdisc</object-name>
     <condition>
       <greater-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <value>1500</value>
       </greater-than>
     </condition>
@@ -189,7 +295,7 @@
         <value>600.000</value>
       </greater-than>
       <less-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <value>1500.001</value>
       </less-than>
     </and>
@@ -201,7 +307,7 @@
     <object-name>helice</object-name>
     <condition>
       <less-than>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
 	<value>1500</value>
       </less-than>
     </condition>
@@ -210,7 +316,13 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
-    <property>/engines/engine[0]/rpm</property>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
+    <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
       <x-m> -3.447 </x-m>
@@ -228,7 +340,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeur</object-name>
-    <property>/controls/flight/elevator</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <interpolation>
       <entry><ind> -0.75 </ind><dep> -12.0 </dep></entry>
       <entry><ind>  0.00 </ind><dep>   0.0 </dep></entry>
@@ -250,7 +362,7 @@
   <animation>
     <type>rotate</type>
     <object-name>direction</object-name>
-    <property>/controls/flight/rudder</property>
+    <property>surface-positions/rudder-pos-norm</property>
     <interpolation>
       <entry><ind> -0.75 </ind><dep> -25.0 </dep></entry>
       <entry><ind>  0.00 </ind><dep>   0.0 </dep></entry>
@@ -270,7 +382,7 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
-    <property>/surface-positions/left-aileron-pos-norm</property>
+    <property>surface-positions/left-aileron-pos-norm</property>
     <interpolation>
       <entry><ind> -0.75 </ind><dep>  15.0 </dep></entry>
       <entry><ind>  0.00 </ind><dep>   0.0 </dep></entry>
@@ -289,7 +401,7 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
-    <property>/surface-positions/right-aileron-pos-norm</property>
+    <property>surface-positions/right-aileron-pos-norm</property>
     <interpolation>
       <entry><ind> -0.75 </ind><dep> -10.0 </dep></entry>
       <entry><ind>  0.00 </ind><dep>   0.0 </dep></entry>
@@ -309,7 +421,7 @@
   <animation>
     <type>rotate</type>
     <object-name>voletG</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
+    <property>surface-positions/flap-pos-norm</property>
     <factor> 20 </factor>
     <axis>
       <x1-m> -1.201 </x1-m>
@@ -324,7 +436,7 @@
   <animation>
     <type>rotate</type>
     <object-name>voletD</object-name>
-    <property>/surface-positions/flap-pos-norm</property>
+    <property>surface-positions/flap-pos-norm</property>
     <factor> 20 </factor>
     <axis>
       <x1-m> -1.065 </x1-m>
@@ -506,9 +618,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>LaVerriere</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>translate</type>
     <object-name>LaVerriere</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
       <entry><ind> 0.2 </ind><dep> 0.3 </dep></entry>
@@ -524,7 +650,7 @@
   <animation>
     <type>translate</type>
     <object-name>LaVerriere</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
       <entry><ind> 0.5 </ind><dep> 0.6 </dep></entry>
@@ -540,7 +666,7 @@
   <animation>
     <type>rotate</type>
     <object-name>LaVerriere</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 45 </dep></entry>
@@ -577,6 +703,15 @@
   </model>
 
   <model>
+    <path>Aircraft/Katana/Models/light/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -1.272 </x-m>
+      <y-m> -5.411 </y-m>
+      <z-m>  0.264 </z-m>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/Katana/Models/light/GreenLight.xml</path>
     <offsets>
       <x-m> -1.335 </x-m>
@@ -586,16 +721,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Katana/Models/light/StrobeWhite.xml</path>
-    <offsets>
-      <x-m> -1.272 </x-m>
-      <y-m> -5.411 </y-m>
-      <z-m>  0.264 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Katana/Models/light/StrobeWhite.xml</path>
+    <path>Aircraft/Katana/Models/light/StrobeLight.xml</path>
     <offsets>
       <x-m> -1.272 </x-m>
       <y-m>  5.411 </y-m>
@@ -604,7 +730,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Katana/Models/light/flash.xml</path>
+    <path>Aircraft/Katana/Models/light/light-cone.xml</path>
     <offsets>
       <x-m> -1.967 </x-m>
       <y-m> -4.765 </y-m>

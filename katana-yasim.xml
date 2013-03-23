@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
-  Diamond DA 20 Katana - 2009 - Emmanuel BARANGER 
+  Diamond DA 20 Katana - 2009 - Emmanuel BARANGER
+                       - 2013 - Updated
 
   source       : http://en.wikipedia.org/wiki/Diamond_DA20
 
@@ -45,9 +46,9 @@
         camber="0.018"
         incidence="1"
         sweep="-3">
-        <stall aoa="18" width="1.0" peak="1.5"/>
+        <stall aoa="18" width="1" peak="1.5"/>
         <flap0 start="0.05" end="0.68" lift="1.4" drag="1.5"/>
-        <flap1 start="0.68" end="0.96" lift="1.2" drag="1.1"/>
+        <flap1 start="0.68" end="1.00" lift="1.2" drag="1.1"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
@@ -67,8 +68,8 @@
          taper="0.50"
          incidence="0"
          sweep="0">
-         <stall aoa="20" width="4" peak="1.5"/>
-         <flap0 start="0" end="1.636" lift="2.0" drag="1.1"/>
+         <stall aoa="18" width="1" peak="1.35"/>
+         <flap0 start="0" end="1" lift="1.4" drag="1"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
          <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
@@ -81,8 +82,8 @@
        length="1.143" 
        taper="0.60"
        sweep="35">
-       <stall aoa="18" width="3" peak="1.5"/>
-       <flap0 start="0" end="0.935" lift="1.6" drag="1.3"/>
+       <stall aoa="18" width="1" peak="1.5"/>
+       <flap0 start="0" end="1" lift="1.6" drag="1.3"/>
 
        <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
 
@@ -107,12 +108,12 @@
              cruise-power="110"
              takeoff-power="125" 
              takeoff-rpm="2800" >
+             <actionpt x="3.447" y="0" z="0.046"  />
              <piston-engine eng-rpm="2800" 
                             alt="0000" 
                             eng-power="125" 
                             displacement="240" 
                             compression="8.5"/>
-             <actionpt x="3.447" y="0" z="0.046"  />
              <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE"/>
              <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
              <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>

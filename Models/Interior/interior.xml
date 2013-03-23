@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -17,7 +17,7 @@
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
-    <texture>shader.png</texture>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>intvitres</object-name>
   </animation>
 
@@ -25,6 +25,25 @@
     <type>noshadow</type>
     <object-name>intvitres</object-name>
   </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intvitres</object-name>
+  </effect>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/Katana/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -2.11916 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.23175 </z-m>
+    </offsets>
+  </model>
 
   <!-- Pilote -->
   <model>
@@ -36,13 +55,61 @@
     </offsets>
   </model>
 
-  <!-- Tableau de bord -->
+  <!-- Pilote seat -->
   <model>
-    <path>Aircraft/Katana/Models/Interior/Panel/panel.xml</path>
+    <path>Aircraft/Katana/Models/Interior/Seats/seat.xml</path>
     <offsets>
-      <x-m> -2.291 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.210 </z-m>
+      <x-m> -1.37154 </x-m>
+      <y-m> -0.25201 </y-m>
+      <z-m>  0.06911 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Passager seat -->
+  <model>
+    <path>Aircraft/Katana/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.37154 </x-m>
+      <y-m>  0.25201 </y-m>
+      <z-m>  0.06911 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Yokes -->
+  <model>
+    <path>Aircraft/Katana/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
+    <offsets>
+      <x-m> -1.92665 </x-m>
+      <y-m> -0.25201 </y-m>
+      <z-m> -0.23738 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Katana/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
+    <offsets>
+      <x-m> -1.92665 </x-m>
+      <y-m>  0.25201 </y-m>
+      <z-m> -0.23738 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Pedals -->
+  <model>
+    <path>Aircraft/Katana/Models/Interior/Panel/Instruments/Pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -2.31283 </x-m>
+      <y-m> -0.26985 </y-m>
+      <z-m> -0.23152 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Katana/Models/Interior/Panel/Instruments/Pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -2.31283 </x-m>
+      <y-m>  0.26985 </y-m>
+      <z-m> -0.23152 </z-m>
     </offsets>
   </model>
 
@@ -54,9 +121,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>IntLaVerriere</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>translate</type>
     <object-name>IntLaVerriere</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
       <entry><ind> 0.2 </ind><dep> 0.3 </dep></entry>
@@ -72,7 +153,7 @@
   <animation>
     <type>translate</type>
     <object-name>IntLaVerriere</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
       <entry><ind> 0.5 </ind><dep> 0.6 </dep></entry>
@@ -88,7 +169,7 @@
   <animation>
     <type>rotate</type>
     <object-name>IntLaVerriere</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 45 </dep></entry>

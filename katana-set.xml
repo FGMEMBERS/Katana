@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- <PropertyList include="katana-jsbsim-cnf.xml"> -->
 <PropertyList include="katana-yasim-cnf.xml">
 
   <sim>
-    <description>Diamond DA 20 Katana</description>
+    
+    <description>Diamond DA 20 Katana (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
+    
   </sim>
 
 </PropertyList>
