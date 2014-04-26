@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
-kids 5
+kids 4
 OBJECT poly
 name "fond"
 loc 0 0 -0
@@ -451,28 +451,6 @@ refs 4
 3 0.013437837362 0.713325977325
 2 0.013437837362 0.477777004242
 1 0.25259077549 0.477777004242
-kids 0
-OBJECT poly
-name "warning05.001"
-loc 0 0 -0
-data 13
-warning05.001
-texture "warning.png"
-texrep 1.000000 1.000000
-crease 30.000001
-numvert 4
-0.004137 -0.010948 -0.02308
-0.004137 -0.010948 -0.001179
-0.002359 -0.011374 -0.000754
-0.002359 -0.011374 -0.023505
-numsurf 1
-SURF 0x10
-mat 0
-refs 4
-0 0.225364997983 0.779383003712
-1 0.009616999887 0.779383003712
-2 0.005365000106 0.775210022926
-3 0.229616999626 0.775210022926
 kids 0
 OBJECT poly
 name "warning05.on"

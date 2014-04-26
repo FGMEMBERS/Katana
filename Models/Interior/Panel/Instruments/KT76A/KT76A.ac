@@ -18,10 +18,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 1 0.999999940395
+3 0 0.999999940395
 2 0 0
-1 0 0
+1 1 0
 kids 0
 OBJECT poly
 name "1000Up"
@@ -38,10 +38,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 1 0.999999940395
+3 0 0.999999940395
 2 0 0
-1 0 0
+1 1 0
 kids 0
 OBJECT poly
 name "100Dn"
@@ -58,10 +58,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 0.999999940395 0.999999940395
+3 0 0.999999940395
 2 0 0
-1 0 0
+1 0.999999940395 0
 kids 0
 OBJECT poly
 name "100Up"
@@ -78,10 +78,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 0.999999940395 0.999999940395
+3 0 0.999999940395
 2 0 0
-1 0 0
+1 0.999999940395 0
 kids 0
 OBJECT poly
 name "10Dn"
@@ -98,10 +98,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 1 0.999999940395
+3 0 0.999999940395
 2 0 0
-1 0 0
+1 1 0
 kids 0
 OBJECT poly
 name "10Up"
@@ -118,10 +118,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 1 0.999999940395
+3 0 0.999999940395
 2 0 0
-1 0 0
+1 1 0
 kids 0
 OBJECT poly
 name "1Dn"
@@ -138,10 +138,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 1 0.999999940395
+3 0 0.999999940395
 2 0 0
-1 0 0
+1 1 0
 kids 0
 OBJECT poly
 name "1Up"
@@ -158,10 +158,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 1 0.999999940395
+3 0 0.999999940395
 2 0 0
-1 0 0
+1 1 0
 kids 0
 OBJECT poly
 name "Dial1"
@@ -5846,10 +5846,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 1 1
+3 0 1
 2 0 0
-1 0 0
+1 1 0
 kids 0
 OBJECT poly
 name "ModeUp"
@@ -5866,10 +5866,10 @@ numsurf 1
 SURF 0x00
 mat 0
 refs 4
-0 0 0
-3 0 0
+0 1 1
+3 0 1
 2 0 0
-1 0 0
+1 1 0
 kids 0
 OBJECT poly
 name "cache"

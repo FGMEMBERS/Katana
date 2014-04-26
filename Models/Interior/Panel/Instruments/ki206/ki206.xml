@@ -21,20 +21,12 @@
     <object-name>KI206.crsdn</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
-    <object-name>KI206.vitre</object-name>
-    <object-name>KI206.crsup</object-name>
-    <object-name>KI206.crsdn</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>KI206.vitre</object-name>
-  </animation>
-
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Katana/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>KI206.gsflag</object-name>

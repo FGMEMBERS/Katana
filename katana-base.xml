@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <sim include="Nasal/views.xml">
+  <sim include="Systems/views.xml">
 
     <description>Diamond DA 20 Katana (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
@@ -35,34 +35,36 @@
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
-        <int type="int" n="0">   0 </int>                                               <!--  0 immat -->
-        <int type="int" n="1">   0 </int>                                               <!--  1 immat -->
-        <int type="int" n="2">   0 </int>                                               <!--  2 immat -->
-        <int type="int" n="3">   0 </int>                                               <!--  3 immat -->
-        <int type="int" n="4">   0 </int>                                               <!--  4 immat -->
-        <int type="int" n="5">   0 </int>                                               <!--  5 immat -->
-        <int type="int" n="6">   1 </int>                                               <!--  POGO1relase -->
-        <int type="int" n="7">   1 </int>                                               <!--  POGO2relase -->
-        <int type="int" n="8" alias="/sim/model/show-immat"> 0 </int>                   <!--  6 Show immat -->
-        <int type="int" n="9">   0 </int>                                               <!--  POGO1dropped -->
-        <int type="int" n="10">  0 </int>                                               <!--  POGO2dropped -->
-        <float n="0" alias="/sim/model/door-positions/crew/position-norm"> 1 </float>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
-        <float n="2" alias="/position/gear-agl-m"> 0 </float>                            <!-- altitude for MP shadow -->
-        <float n="3" alias="/position/altitude-ft"> 0 </float>                           <!-- altitude for Smoke/Trail -->
-        <float n="4" alias="/engines/engine[0]/n1" />
-        <float n="7" alias="/controls/engines/engine[0]/throttle" />
-        <string n="9" type="string" />                                                   <!-- string[9] reserved for bombable mode -->
+        <int n="0"   type="int"> 0 </int>                                        <!--  0 immat -->
+        <int n="1"   type="int"> 0 </int>                                        <!--  1 immat -->
+        <int n="2"   type="int"> 0 </int>                                        <!--  2 immat -->
+        <int n="3"   type="int"> 0 </int>                                        <!--  3 immat -->
+        <int n="4"   type="int"> 0 </int>                                        <!--  4 immat -->
+        <int n="5"   type="int"> 0 </int>                                        <!--  5 immat -->
+        <int n="6"   type="int"> 1 </int>                                        <!--  POGO1relase -->
+        <int n="7"   type="int"> 1 </int>                                        <!--  POGO2relase -->
+        <int n="8"   type="int" alias="/sim/model/show-immat"> 0 </int>          <!--  6 Show immat -->
+        <int n="9"   type="int"> 0 </int>                                        <!--  POGO1dropped -->
+        <float n="0" alias="/sim/model/door-positions/crew/position-norm">1</float>
+        <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                    <!-- altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft"> 0 </float>                   <!-- altitude for Smoke/Trail -->
+        <float n="4" alias="/engines/engine[0]/rpm"/>
+        <float n="5" alias="/engines/engine[0]/cranking"/>
+        <float n="6" alias="/gear/gear[0]/wow/"/>
+        <float n="7" alias="/gear/gear[1]/wow/"/>
+        <float n="8" alias="/gear/gear[2]/wow/"/>
+        <float n="9" alias="/gear/gear[0]/rollspeed-ms"/>
+        <float n="10" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float n="11" alias="/gear/gear[2]/rollspeed-ms"/>
+        <!-- For Bombable -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
       </generic>
     </multiplay>
-
-    <help>
-      <title>katana</title>
-      <key>
-        <name>d</name>
-        <desc>Open/Close canopy</desc>
-      </key>
-    </help>
+    <float n="7" alias="/controls/engines/engine[0]/throttle" />
+    
+    <help include="Systems/help.xml"/>
 
     <menubar include="Dialogs/katana-menu.xml"/>
 
@@ -72,10 +74,15 @@
     <gear>
       <brake-parking type="double">1</brake-parking>
     </gear>
+    <flight>
+      <elevator-trim>
+        <value>-0.001</value>
+      </elevator-trim>
+    </flight>
   </controls>
 
   <input>
-    <keyboard include="Nasal/katana-keyboard.xml"/>
+    <keyboard include="Systems/katana-keyboard.xml"/>
   </input>
  
   <nasal>

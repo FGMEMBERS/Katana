@@ -17,6 +17,17 @@
     <!-- Objets transparents -->
   </animation>
 
+  <!-- Aération -->
+  <model>
+    <path>Aircraft/Katana/Models/Interior/Panel/Pedestal/Instruments/trim/trim.xml</path>
+    <offsets>
+      <x-m>  0.07258 </x-m>
+      <y-m> -0.03377 </y-m>
+      <z-m>  0.04149 </z-m>
+      <pitch-deg> 5 </pitch-deg>
+    </offsets>
+  </model>
+  
   <!--  Throttle pick animation -->
   <animation>
     <type>pick</type>

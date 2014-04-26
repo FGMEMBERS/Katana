@@ -5,9 +5,9 @@
   <model>
     <path>Aircraft/Katana/Models/Interior/Panel/Instruments/plaques/plaque1.xml</path>
     <offsets>
-      <x-m>  0.000000 </x-m>
-      <y-m> -0.068690 </y-m>
-      <z-m>  0.105080 </z-m>
+      <x-m>  0.00000 </x-m>
+      <y-m> -0.06869 </y-m>
+      <z-m>  0.10508 </z-m>
     </offsets>
   </model>
 
